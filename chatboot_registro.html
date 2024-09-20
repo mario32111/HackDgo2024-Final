@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a8bbbf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 900px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 30%;
+            background-color: #f1f0f0;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar .conversation {
+            border-bottom: 1px solid #50732d;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .sidebar .conversation:hover {
+            background-color: #e2e2e2;
+        }
+
+        .chat-container {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            background-color: #50732d;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .chat-body {
+            height: 400px;
+            overflow-y: auto;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            max-width: 75%;
+        }
+
+        .message.bot {
+            background-color: #f1f0f0;
+            align-self: flex-start;
+        }
+
+        .message.user {
+            background-color: #50732d;
+            color: #fff;
+            align-self: flex-end;
+        }
+
+        .chat-footer {
+            display: flex;
+            padding: 10px;
+            background-color: #f1f0f0;
+            border-top: 1px solid #ccc;
+        }
+
+        .chat-footer input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .chat-footer button {
+            background-color: #50732d;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            margin-left: 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .chat-footer button:hover {
+            background-color: #50732d;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar" id="conversation-history">
+            <h2>Historial</h2>
+            <!-- Las conversaciones aparecerán aquí -->
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                Chatbot
+            </div>
+            <div class="chat-body" id="chat-body">
+                <div class="message bot">¡Hola! ¿En qué puedo ayudarte?</div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="input-message" placeholder="Escribe un mensaje...">
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const messageInput = document.getElementById('input-message');
+            const messageText = messageInput.value.trim();
+
+            if (messageText === "") return;
+
+            const chatBody = document.getElementById('chat-body');
+
+            // Crear y mostrar el mensaje del usuario
+            const userMessage = document.createElement('div');
+            userMessage.classList.add('message', 'user');
+            userMessage.textContent = messageText;
+            chatBody.appendChild(userMessage);
+
+            // Crear y mostrar la respuesta del bot (puedes personalizar esta lógica)
+            const botMessage = document.createElement('div');
+            botMessage.classList.add('message', 'bot');
+            botMessage.textContent = 'Esta es una respuesta automática del chatbot.';
+            chatBody.appendChild(botMessage);
+
+            // Agregar conversación al historial
+            addToHistory(messageText);
+
+            // Limpiar el input
+            messageInput.value = "";
+
+            // Hacer scroll hacia el final del chat
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function addToHistory(messageText) {
+            const historyContainer = document.getElementById('conversation-history');
+
+            const date = new Date();
+            const dateString = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+
+            const conversationItem = document.createElement('div');
+            conversationItem.classList.add('conversation');
+            conversationItem.textContent = `${dateString} - Tema: ${messageText}`;
+
+            // Agregar el nuevo elemento al historial
+            historyContainer.appendChild(conversationItem);
+        }
+    </script>
+</body>
+</html>

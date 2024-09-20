@@ -1,0 +1,23 @@
+:root {
+    --color-dark-green: #2B4016;
+    --color-medium-green: #50732D;
+    --color-light-green: #84A64E;
+    --color-light-gray: #F0F2F2;
+    --color-gray: #A8BBBF;
+}
+.icono-contacto{
+    background-color: #83A64E!important;
+}
+
+.img-logo{
+    width: 200px;
+}
+
+.dato-oscuro{
+    background-color: var(--color-dark-green)!important;
+}
+
+.dato-claro{
+    background-color: var(--color-light-green)!important;
+}
+
