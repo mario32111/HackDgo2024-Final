@@ -1246,6 +1246,9 @@ h3 {
 .slider_bg_2 {
   background-image: url(../img/banner/banner2.png);
 }
+.slider_bg_3 {
+  background-image: url(../img/banner/banner3.jpg);
+}
 
 /* line 8, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_slider.scss */
 .slider_area .single_slider {
@@ -1304,9 +1307,13 @@ h3 {
 .slider_area .single_slider .slider_text p {
   font-size: 18px;
   font-weight: 400;
-  color: #727272;
+  color: #000000;
   margin-bottom: 40px;
   margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco semi-transparente */
+  padding: 10px; /* Espacio alrededor del texto para que se vea mejor con el fondo */
+  border-radius: 5px; /* Bordes redondeados opcionales para un mejor estilo */
+  width: 45%;
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -2465,7 +2472,7 @@ h3 {
 
 /* line 1, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */
 .breadcam_bg {
-  background-image: url(../img/banner/bradcam.jpg);
+  background-image: url(../img/banner/bradcam.png);
 }
 
 /* line 4, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */
@@ -2535,13 +2542,14 @@ h3 {
   z-index: 9;
   width: 681px;
   padding: 60px 40px;
+
 }
 
 /* line 54, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */
 .popup_box h3 {
   text-align: center;
   font-size: 22px;
-  color: #5DB2FF;
+  color: var(--color-medium-green);
   margin-bottom: 46px;
 }
 
@@ -2549,6 +2557,7 @@ h3 {
 .popup_box .boxed-btn3 {
   width: 100%;
   text-transform: capitalize;
+  background: var(--color-dark-green);
 }
 
 /* line 64, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_bradcam.scss */

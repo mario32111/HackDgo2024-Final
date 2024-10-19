@@ -21,13 +21,15 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(168, 187, 191, 0.1); /* Usando --color-primary con transparencia */
+    background-color: rgba(168, 187, 191, 0.1);
+    /* Usando --color-primary con transparencia */
     backdrop-filter: blur(10px);
     z-index: -1;
 }
 
 .container {
-    background-color: rgba(240, 242, 242, 0.9); /* Usando --color-secondary con transparencia */
+    background-color: rgba(240, 242, 242, 0.9);
+    /* Usando --color-secondary con transparencia */
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -101,4 +103,63 @@ h1 {
 
 .links a:hover {
     text-decoration: underline;
+}
+
+
+/* Estilo básico para la barra de navegación */
+.navbar {
+    width: 100%;
+    /* Añadimos un margen a los lados */
+    background-color: var(--color-secondary);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Distribuye espacio entre los elementos */
+    border-bottom: 1px solid #e0e0e0;
+    position: fixed;
+    /* Fija la barra en la parte superior */
+    top: 0;
+    /* Margen izquierdo */
+    /* Margen derecho */
+    z-index: 1000;
+    /* Asegura que la barra esté por encima de otros elementos */
+    box-sizing: border-box;
+    /* Para asegurar que el padding y el ancho se calculen correctamente */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--color-dark-green);
+    margin-right: 10px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.separator {
+    margin-right: 10px;
+}
+
+/* Ajustes para el contenido principal */
+.container {
+    margin-top: 120px;
+    /* Añade espacio para la barra fija */
+}
+
+.navbar-btn {
+    width: auto;
+    padding: 10px 20px;
+    /* Añade padding para que se vea mejor */
+    background-color: var(--color-light-green);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.navbar-btn:hover {
+    background-color: var(--color-medium-green);
+    /* Color para hover si está definido */
 }

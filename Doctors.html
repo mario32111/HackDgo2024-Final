@@ -24,6 +24,92 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/estilo.css">
+ <style>
+
+    :root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --very-light-pink: #C7C7C7;
+    --text-input-field: #F7F7F7;
+    --hospital-green: #ACD9B2;
+    --color-dark-green: #2B4016;
+    --color-medium-green: #50732D;
+    --color-light-green: #84A64E;
+    --color-light-gray: #F0F2F2;
+    --color-gray: #A8BBBF;
+    /*Variables para las letras*/
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+    background-color: #fcfafa;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: -1px 1px 1px rgba(128, 128, 128, 0.397);
+    margin-top: 32px;
+}
+
+.formulario-label {
+    display: flex;
+    flex-direction: column;
+    margin: 12px;
+}
+
+.formulario-label input, .formulario-label textarea {
+    background-color: #f5f5f5;
+    border: 1px solid gray;
+    border-radius: 8px;
+    box-shadow: -1px 1px 1px rgba(128, 128, 128, 0.397);
+    height: 32px;
+    padding-left: 8px;
+    width: 100%; /* Mantiene el ancho igual para input y textarea */
+}
+.formulario-label textarea{
+    height: 60px;
+
+}
+textarea {
+    height: 64px; /* Doble de largo comparado con los inputs */
+}
+
+.formulario-label span {
+    font-weight: bold;
+}
+
+.label-button {
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 150px;
+    min-width: 150px;
+    height: 32px;
+    border: none;
+    background-color: var(--color-medium-green);
+    font-size: 20px;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.label-button:hover {
+    border: 1px solid var(--color-medium-green);
+    background-color: white;
+    color: var(--color-medium-green);
+}
+
+ </style>
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
@@ -54,8 +140,9 @@
                         <div class="col-xl-6 col-md-6">
                             <div class="short_contact_list">
                                 <ul>
-                                    <li><a href="#"> <i class="fa fa-envelope"></i> info@docmed.com</a></li>
-                                    <li><a href="#"> <i class="fa fa-phone"></i> 160160</a></li>
+                                    <li><a href="#"> <i class="fa icono-contacto fa-envelope"></i> info@docmed.com</a>
+                                    </li>
+                                    <li><a href="#"> <i class="fa icono-contacto fa-phone"></i> 160160</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -68,7 +155,7 @@
                         <div class="col-xl-3 col-lg-2">
                             <div class="logo">
                                 <a href="index.html">
-                                    <img src="img/logo.png" alt="">
+                                    <img class="img-logo" src="img/logo.jpg" alt="">
                                 </a>
                             </div>
                         </div>
@@ -77,21 +164,9 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a class="active" href="index.html">home</a></li>
-                                        <li><a href="Department.html">Department</a></li>
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="elements.html">elements</a></li>
-                                                <li><a href="about.html">about</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="Doctors.html">Doctors</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="Department.html">Expedientes</a></li>
+                                        <li><a href="#">Chat AI <i class=""></i></a></li>
+                                        <li><a href="Doctors.html">Generar Receta</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -99,7 +174,7 @@
                         <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                             <div class="Appointment">
                                 <div class="book_btn d-none d-lg-block">
-                                    <a class="popup-with-form" href="#test-form">Make an Appointment</a>
+                                    <a class="popup-with-form" href="#test-form">Cerrar sesion</a>
                                 </div>
                             </div>
                         </div>
@@ -111,319 +186,77 @@
             </div>
         </div>
     </header>
+
     <!-- header-end -->
+    <form action="" class="formulario">
+        <h1 class="formulario-titulo">Ingresa los datos de la receta</h1>
+    
+        <label class="formulario-label" for="id-receta">
+            <span>ID de receta</span>
+            <input type="text" id="id-receta" name="id-receta" placeholder="ID de la receta">
+        </label>
+    
+        <label class="formulario-label" for="id-diagnostico">
+            <span>ID del diagnóstico</span>
+            <input type="text" id="id-diagnostico" name="id-diagnostico" placeholder="ID del diagnóstico">
+        </label>
+    
+        <label class="formulario-label" for="cedula-medico">
+            <span>Cédula del médico</span>
+            <input type="text" id="cedula-medico" name="cedula-medico" placeholder="Cédula profesional del médico">
+        </label>
+    
+        <label class="formulario-label" for="curp-paciente">
+            <span>CURP del paciente</span>
+            <input type="text" id="curp-paciente" name="curp-paciente" placeholder="CURP del paciente">
+        </label>
+    
+        <!-- Áreas de texto con doble ancho -->
+        <label class="formulario-label" for="medicamento">
+            <span>Medicamento</span>
+            <textarea id="medicamento" name="medicamento" placeholder="Nombre del medicamento"></textarea>
+        </label>
+    
+        <label class="formulario-label" for="farmaceutica">
+            <span>Farmacéutica</span>
+            <textarea id="farmaceutica" name="farmaceutica" placeholder="Laboratorio farmacéutico"></textarea>
+        </label>
+    
+        <label class="formulario-label" for="presentacion">
+            <span>Presentación</span>
+            <textarea id="presentacion" name="presentacion" placeholder="Presentación del medicamento"></textarea>
+        </label>
+    
+        <label class="formulario-label" for="dosis">
+            <span>Dosis</span>
+            <textarea id="dosis" name="dosis" placeholder="Dosis recomendada"></textarea>
+        </label>
+    
+        <label class="formulario-label" for="frecuencia">
+            <span>Frecuencia</span>
+            <textarea id="frecuencia" name="frecuencia" placeholder="Frecuencia del tratamiento"></textarea>
+        </label>
+    
+        <label class="formulario-label" for="duracion-tratamiento">
+            <span>Duración del tratamiento</span>
+            <textarea id="duracion-tratamiento" name="duracion-tratamiento" placeholder="Duración del tratamiento"></textarea>
+        </label>
+    
+        <label class="formulario-label" for="indicacion-uso">
+            <span>Indicación o uso</span>
+            <textarea id="indicacion-uso" name="indicacion-uso" placeholder="Indicación o uso del medicamento"></textarea>
+        </label>
+    
+        <label class="formulario-label" for="fecha-emision">
+            <span>Fecha de emisión</span>
+            <input type="date" id="fecha-emision" name="fecha-emision">
+        </label>
+        <a class="label-button" href="#test-form">Enviar</a>
 
-    <!-- bradcam_area_start  -->
-    <div class="bradcam_area breadcam_bg_2 bradcam_overlay">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="bradcam_text">
-                        <h3>Doctors</h3>
-                        <p><a href="index.html">Home /</a> Doctors</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- bradcam_area_end  -->
-
-    <!-- expert_doctors_area_start -->
-    <div class="expert_doctors_area doctor_page">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-3">
-                    <div class="single_expert mb-40">
-                        <div class="expert_thumb">
-                            <img src="img/experts/1.png" alt="">
-                        </div>
-                        <div class="experts_name text-center">
-                            <h3>Mirazul Alom</h3>
-                            <span>Neurologist</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single_expert mb-40">
-                        <div class="expert_thumb">
-                            <img src="img/experts/2.png" alt="">
-                        </div>
-                        <div class="experts_name text-center">
-                            <h3>Mirazul Alom</h3>
-                            <span>Neurologist</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single_expert mb-40">
-                        <div class="expert_thumb">
-                            <img src="img/experts/3.png" alt="">
-                        </div>
-                        <div class="experts_name text-center">
-                            <h3>Mirazul Alom</h3>
-                            <span>Neurologist</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single_expert mb-40">
-                        <div class="expert_thumb">
-                            <img src="img/experts/4.png" alt="">
-                        </div>
-                        <div class="experts_name text-center">
-                            <h3>Mirazul Alom</h3>
-                            <span>Neurologist</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single_expert mb-40">
-                        <div class="expert_thumb">
-                            <img src="img/experts/6.png" alt="">
-                        </div>
-                        <div class="experts_name text-center">
-                            <h3>Mirazul Alom</h3>
-                            <span>Neurologist</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single_expert mb-40">
-                        <div class="expert_thumb">
-                            <img src="img/experts/7.png" alt="">
-                        </div>
-                        <div class="experts_name text-center">
-                            <h3>Mirazul Alom</h3>
-                            <span>Neurologist</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single_expert mb-40">
-                        <div class="expert_thumb">
-                            <img src="img/experts/8.png" alt="">
-                        </div>
-                        <div class="experts_name text-center">
-                            <h3>Mirazul Alom</h3>
-                            <span>Neurologist</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single_expert mb-40">
-                        <div class="expert_thumb">
-                            <img src="img/experts/9.png" alt="">
-                        </div>
-                        <div class="experts_name text-center">
-                            <h3>Mirazul Alom</h3>
-                            <span>Neurologist</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- expert_doctors_area_end -->
-
-    <!-- testmonial_area_start -->
-    <div class="testmonial_area">
-        <div class="testmonial_active owl-carousel">
-            <div class="single-testmonial testmonial_bg_1 overlay2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-10 offset-xl-1">
-                            <div class="testmonial_info text-center">
-                                <div class="quote">
-                                    <i class="flaticon-straight-quotes"></i>
-                                </div>
-                                <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor <br>
-                                    sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque.
-                                    <br>
-                                    Fusce ac mattis nulla. Morbi eget ornare dui. </p>
-                                <div class="testmonial_author">
-                                    <h4>Asana Korim</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single-testmonial testmonial_bg_2 overlay2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-10 offset-xl-1">
-                            <div class="testmonial_info text-center">
-                                <div class="quote">
-                                    <i class="flaticon-straight-quotes"></i>
-                                </div>
-                                <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor <br>
-                                    sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque.
-                                    <br>
-                                    Fusce ac mattis nulla. Morbi eget ornare dui. </p>
-                                <div class="testmonial_author">
-                                    <h4>Asana Korim</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single-testmonial testmonial_bg_1 overlay2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-10 offset-xl-1">
-                            <div class="testmonial_info text-center">
-                                <div class="quote">
-                                    <i class="flaticon-straight-quotes"></i>
-                                </div>
-                                <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor <br>
-                                    sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque.
-                                    <br>
-                                    Fusce ac mattis nulla. Morbi eget ornare dui. </p>
-                                <div class="testmonial_author">
-                                    <h4>Asana Korim</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- testmonial_area_end -->
-
-    <!-- business_expert_area_start  -->
-    <div class="business_expert_area">
-        <div class="business_tabs_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <ul class="nav" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-                            aria-selected="true">Excellent Services</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-                            aria-selected="false">Qualified Doctors</a>
-                            </li>
-
-
-                            <li class="nav-item">
-                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-                            aria-selected="false">Emergency Departments</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="container">
-            <div class="border_bottom">
-                    <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                
-                                    <div class="row align-items-center">
-                                            <div class="col-xl-6 col-md-6">
-                                                <div class="business_info">
-                                                    <div class="icon">
-                                                        <i class="flaticon-first-aid-kit"></i>
-                                                    </div>
-                                                    <h3>Leading edge care for Your family</h3>
-                                                    <p>Esteem spirit temper too say adieus who direct esteem.
-                                                        It esteems luckily picture placing drawing. Apartments frequently or motionless on
-                                                        reasonable projecting expression.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-6 col-md-6">
-                                                <div class="business_thumb">
-                                                    <img src="img/about/business.png" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                            </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                    <div class="row align-items-center">
-                                            <div class="col-xl-6 col-md-6">
-                                                <div class="business_info">
-                                                    <div class="icon">
-                                                        <i class="flaticon-first-aid-kit"></i>
-                                                    </div>
-                                                    <h3>Leading edge care for Your family</h3>
-                                                    <p>Esteem spirit temper too say adieus who direct esteem.
-                                                        It esteems luckily picture placing drawing. Apartments frequently or motionless on
-                                                        reasonable projecting expression.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-6 col-md-6">
-                                                <div class="business_thumb">
-                                                    <img src="img/about/business.png" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                            </div>
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                                    <div class="row align-items-center">
-                                            <div class="col-xl-6 col-md-6">
-                                                <div class="business_info">
-                                                    <div class="icon">
-                                                        <i class="flaticon-first-aid-kit"></i>
-                                                    </div>
-                                                    <h3>Leading edge care for Your family</h3>
-                                                    <p>Esteem spirit temper too say adieus who direct esteem.
-                                                        It esteems luckily picture placing drawing. Apartments frequently or motionless on
-                                                        reasonable projecting expression.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-6 col-md-6">
-                                                <div class="business_thumb">
-                                                    <img src="img/about/business.png" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                            </div>
-                          </div>
-            </div>
-        </div>
-    </div>
-    <!-- business_expert_area_end  -->
-
-    <!-- Emergency_contact start -->
-    <div class="Emergency_contact">
-        <div class="conatiner-fluid p-0">
-            <div class="row no-gutters">
-                <div class="col-xl-6">
-                    <div class="single_emergency d-flex align-items-center justify-content-center emergency_bg_1 overlay_skyblue">
-                        <div class="info">
-                            <h3>For Any Emergency Contact</h3>
-                            <p>Esteem spirit temper too say adieus.</p>
-                        </div>
-                        <div class="info_button">
-                            <a href="#" class="boxed-btn3-white">+10 378 4673 467</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6">
-                    <div class="single_emergency d-flex align-items-center justify-content-center emergency_bg_2 overlay_skyblue">
-                        <div class="info">
-                            <h3>Make an Online Appointment</h3>
-                            <p>Esteem spirit temper too say adieus.</p>
-                        </div>
-                        <div class="info_button">
-                            <a href="#" class="boxed-btn3-white">Make an Appointment</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Emergency_contact end -->
-
+    </form>
+    
+    
+    
 <!-- footer start -->
     <footer class="footer">
             <div class="footer_top">

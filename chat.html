@@ -230,7 +230,7 @@
             chatBody.scrollTop = chatBody.scrollHeight;
 
             // Llamar a la API de ChatGPT
-            const API_KEY = 'PONER APIKEY';
+            const API_KEY = 'poner apikey';
             const API_URL = 'https://api.openai.com/v1/chat/completions';
 
             try {
@@ -245,8 +245,6 @@
                         messages: [{ role: 'user', content: messageText }]
                     }),
                 });
-
-                
 
                 if (!response.ok) {
                     throw new Error(`Error: ${response.status}`);

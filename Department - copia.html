@@ -26,49 +26,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
 
-        
-        /* Botones */
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin: 10px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-
-        /* Estilos de las tablas */
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 25px 0;
-            font-size: 18px;
-            text-align: left;
-        }
-
-        table th, table td {
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-        }
-
-        table th {
-            background-color: #f2f2f2;
-            color: #333;
-        }
-
-        table td {
-            background-color: #fff;
-            color: #333;
-        }
-
-        table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-    </style>
 
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
@@ -155,7 +113,7 @@
                 <div class="col-xl-12">
                     <div class="bradcam_text">
                         <form action="" class="formBuscar" onsubmit="return handleSubmit(event)">
-                            <input type="text" class="formBuscar-text" placeholder="CURP" value="COGA031215" required>
+                            <input type="text" class="formBuscar-text" placeholder="CURP" required>
                             <input type="submit" value="Buscar" class="formBuscar-button">
                         </form>
                     </div>
@@ -173,7 +131,7 @@
                         </div>
                         <h3>Datos personales</h3>
                         <p>Información básica del paciente para una atención personalizada.</p>
-                        <button onclick="toggleElemenent(event, 'datos-personales')" class="boxed-btn3-white">Ver Info</button>
+                        <a href="#" class="boxed-btn3-white">+10 672 356 3567</a>
 
                     </div>
                 </div>
@@ -195,7 +153,7 @@
                         </div>
                         <h3>Antecedentes personales</h3>
                         <p>Historial médico del paciente relevante para el tratamiento.</p>
-                        <button onclick="toggleElemenent(event, 'antecedentes-clinicos')" class="boxed-btn3-white">Ver Info</button>
+                        <a href="#" class="boxed-btn3-white">Make an Appointment</a>
                     </div>
                 </div>
 
@@ -203,7 +161,7 @@
             </div>
         </div>
     </div>
-    <div id="datos-personales" class="ocultar">
+    <div id="datos-personales" class="popup_box">
         <div class="popup_inner">
             <h3>Datos personales</h3>
             <table>
@@ -264,7 +222,7 @@
     </div>
 
     <!-- Ventana Antecedentes Clínicos -->
-    <div id="antecedentes-clinicos" class="ocultar">
+    <div id="antecedentes-clinicos" class="popup_box">
         <div class="popup_inner">
             <h3>Antecedentes clínicos</h3>
             <table>
@@ -455,7 +413,7 @@
                         <h3>Llena el siguiente formulario</h3>
                             <div class="row">
                                 <div class="input-text">
-                                    <p style="color: black;">Diagnostico y prescripción médica</p>
+                                    <p style="color: black;">Diagnostico</p>
                                     <textarea class="input-text-input" placeholder="ingresa el diagnostico"  name="" id="param1"></textarea>
                                 </div>
                                 <p class="text-diagnostico" id="respuesta">Respuesta aparecerá aquí...</p>
@@ -511,7 +469,7 @@
                                 return;
                             }
                     
-                            const API_KEY = 'poner apikey';
+                            const API_KEY = 'poner api key';
                             const API_URL = 'https://api.openai.com/v1/chat/completions';
                     
                             try {
@@ -580,7 +538,7 @@
 
             <script src="js/main.js"></script>
             <script src="js/index.js"></script>
-            <script>
+            <!-- <script>
                 $('#datepicker').datepicker({
                     iconsLibrary: 'fontawesome',
                     icons: {
@@ -597,7 +555,7 @@
                 $(document).ready(function () {
                     $('.js-example-basic-multiple').select2();
                 });
-            </script>
+            </script> -->
 </body>
 
 </html>
