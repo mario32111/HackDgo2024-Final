@@ -1,0 +1,8 @@
+/* variables.css */
+:root {
+    --color-primary: #A8BBBF; /* Azul grisáceo */
+    --color-secondary: #F0F2F2; /* Gris claro */
+    --color-dark-green: #2B4016; /* Verde oscuro */
+    --color-medium-green: #50732D; /* Verde medio */
+    --color-light-green: #83A64E; /* Verde claro */
+}
