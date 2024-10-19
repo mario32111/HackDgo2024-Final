@@ -18,38 +18,39 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #151515; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #ffc451; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #312f2f; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --background-color: #F0F2F2; /* Actualizado al Gris claro */
+  --default-color: #2B4016; /* Actualizado al Verde oscuro */
+  --heading-color: #50732D; /* Actualizado al Verde medio */
+  --accent-color: #83A64E; /* Actualizado al Verde claro */
+  --surface-color: #A8BBBF; /* Actualizado al Azul grisáceo */
+  --contrast-color: #312f2f; /* Se mantiene igual */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: rgba(255, 255, 255, 0.905);  /* The default color of the main navmenu links */
-  --nav-hover-color: #ffc451; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ffc451; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: rgba(255, 255, 255, 0.905);  /* Se mantiene igual */
+  --nav-hover-color: #83A64E; /* Actualizado al Verde claro */
+  --nav-mobile-background-color: #F0F2F2; /* Actualizado al Gris claro */
+  --nav-dropdown-background-color: #F0F2F2; /* Actualizado al Gris claro */
+  --nav-dropdown-color: #2B4016; /* Actualizado al Verde oscuro */
+  --nav-dropdown-hover-color: #83A64E; /* Actualizado al Verde claro */
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the same color scheme. */
 
 .light-background {
-  --background-color: #f9f9f9;
-  --surface-color: #ffffff;
+  --background-color: #F0F2F2; /* Actualizado al Gris claro */
+  --surface-color: #A8BBBF; /* Actualizado al Azul grisáceo */
 }
 
 .dark-background {
   --background-color: #060606;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --surface-color: #252525;
-  --contrast-color: #2a2727;
+  --default-color: #F0F2F2; /* Actualizado al Gris claro */
+  --heading-color: #F0F2F2; /* Actualizado al Gris claro */
+  --surface-color: #50732D; /* Actualizado al Verde medio */
+  --contrast-color: #2a2727; /* Se mantiene igual */
 }
 
 /* Smooth scroll */
