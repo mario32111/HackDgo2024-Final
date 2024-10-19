@@ -6,15 +6,19 @@ function handleSubmit(event) {
     const password = document.getElementById('password').value;
     console.log('Email:', email);
     console.log('Password:', password);
-    alert('Inicio de sesión exitoso');
+    window.location.href = '../../index.html';
+
 }
 
 function handleForgotPassword(event) {
 
 }
+function signup(){
+    window.location.href = 'register.html';
 
+}
 function handleSignUp(event) {
-
+    
 }
 
 function handlePasswordRecovery(event) {
