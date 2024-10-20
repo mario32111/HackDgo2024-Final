@@ -25,91 +25,119 @@
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/estilo.css">
- <style>
+    <style>
+        :root {
+            --white: #FFFFFF;
+            --black: #000000;
+            --very-light-pink: #C7C7C7;
+            --text-input-field: #F7F7F7;
+            --hospital-green: #ACD9B2;
+            --color-dark-green: #2B4016;
+            --color-medium-green: #50732D;
+            --color-light-green: #84A64E;
+            --color-light-gray: #F0F2F2;
+            --color-gray: #A8BBBF;
+            /*Variables para las letras*/
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
 
-    :root {
-    --white: #FFFFFF;
-    --black: #000000;
-    --very-light-pink: #C7C7C7;
-    --text-input-field: #F7F7F7;
-    --hospital-green: #ACD9B2;
-    --color-dark-green: #2B4016;
-    --color-medium-green: #50732D;
-    --color-light-green: #84A64E;
-    --color-light-gray: #F0F2F2;
-    --color-gray: #A8BBBF;
-    /*Variables para las letras*/
-    --sm: 14px;
-    --md: 16px;
-    --lg: 18px;
-}
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+        }
 
-body {
-    font-family: 'Quicksand', sans-serif;
-    margin: 0;
-}
+        .formulario {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: 0 auto;
+            background-color: #fcfafa;
+            padding: 12px;
+            border-radius: 12px;
+            box-shadow: -1px 1px 1px rgba(128, 128, 128, 0.397);
+            margin-top: 32px;
+        }
+        .formulario-titulo{
+            margin: 0 auto;
+        }
 
-.formulario {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    margin: 0 auto;
-    background-color: #fcfafa;
-    padding: 12px;
-    border-radius: 12px;
-    box-shadow: -1px 1px 1px rgba(128, 128, 128, 0.397);
-    margin-top: 32px;
-}
+        .formulario-label {
+            display: flex;
+            flex-direction: column;
+            margin: 12px;
+        }
 
-.formulario-label {
-    display: flex;
-    flex-direction: column;
-    margin: 12px;
-}
+        .formulario-label input,
+        .formulario-label textarea {
+            background-color: #f5f5f5;
+            border: 1px solid gray;
+            border-radius: 8px;
+            box-shadow: -1px 1px 1px rgba(128, 128, 128, 0.397);
+            height: 32px;
+            padding-left: 8px;
+            width: 100%;
+            /* Mantiene el ancho igual para input y textarea */
+        }
 
-.formulario-label input, .formulario-label textarea {
-    background-color: #f5f5f5;
-    border: 1px solid gray;
-    border-radius: 8px;
-    box-shadow: -1px 1px 1px rgba(128, 128, 128, 0.397);
-    height: 32px;
-    padding-left: 8px;
-    width: 100%; /* Mantiene el ancho igual para input y textarea */
-}
-.formulario-label textarea{
-    height: 60px;
+        .formulario-label textarea {
+            height: 60px;
 
-}
-textarea {
-    height: 64px; /* Doble de largo comparado con los inputs */
-}
+        }
 
-.formulario-label span {
-    font-weight: bold;
-}
+        textarea {
+            height: 64px;
+            /* Doble de largo comparado con los inputs */
+        }
 
-.label-button {
-    display: inline-block;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 150px;
-    min-width: 150px;
-    height: 32px;
-    border: none;
-    background-color: var(--color-medium-green);
-    font-size: 20px;
-    color: white;
-    border-radius: 8px;
-    text-align: center;
-}
+        .formulario-label span {
+            font-weight: bold;
+        }
 
-.label-button:hover {
-    border: 1px solid var(--color-medium-green);
-    background-color: white;
-    color: var(--color-medium-green);
-}
+        .label-button {
+            display: inline-block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 150px;
+            min-width: 150px;
+            height: 32px;
+            border: none;
+            background-color: var(--color-medium-green);
+            font-size: 20px;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+        }
 
- </style>
+        .label-button:hover {
+            border: 1px solid var(--color-medium-green);
+            background-color: white;
+            color: var(--color-medium-green);
+        }
+
+        .formulario-agregar{
+            background-color: white;
+            border-radius: 6px;
+            padding: 5px;
+            border: 1px solid var(--color-medium-green);
+            color: var(--color-medium-green);
+            cursor: pointer;
+        }
+        .formulario-eliminar{
+            background-color: white;
+            border-radius: 6px;
+            padding: 5px;
+            border: 1px solid var(--color-medium-green);
+            color: var(--color-medium-green);
+            cursor: pointer;
+        }
+        .medicamentos-title{
+            width: fit-content;
+            margin: 0 auto;
+
+        }
+    </style>
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
@@ -187,222 +215,152 @@ textarea {
         </div>
     </header>
 
-    <!-- header-end -->
-    <form action="" class="formulario">
+    <form class="formulario" id="form-receta">
         <h1 class="formulario-titulo">Ingresa los datos de la receta</h1>
     
-        <label class="formulario-label" for="id-receta">
-            <span>ID de receta</span>
-            <input type="text" id="id-receta" name="id-receta" placeholder="ID de la receta">
+        <!-- Campos de entrada -->
+        <label class="formulario-label" for="nombre-medico">
+            <span>Nombre del médico</span>
+            <input type="text" id="nombre-medico" name="nombre-medico" placeholder="Nombre del médico" required>
         </label>
-    
-        <label class="formulario-label" for="id-diagnostico">
-            <span>ID del diagnóstico</span>
-            <input type="text" id="id-diagnostico" name="id-diagnostico" placeholder="ID del diagnóstico">
-        </label>
-    
         <label class="formulario-label" for="cedula-medico">
             <span>Cédula del médico</span>
-            <input type="text" id="cedula-medico" name="cedula-medico" placeholder="Cédula profesional del médico">
+            <input type="text" id="cedula-medico" name="cedula-medico" placeholder="Cédula del médico" required>
         </label>
-    
-        <label class="formulario-label" for="curp-paciente">
-            <span>CURP del paciente</span>
-            <input type="text" id="curp-paciente" name="curp-paciente" placeholder="CURP del paciente">
-        </label>
-    
-        <!-- Áreas de texto con doble ancho -->
-        <label class="formulario-label" for="medicamento">
-            <span>Medicamento</span>
-            <textarea id="medicamento" name="medicamento" placeholder="Nombre del medicamento"></textarea>
-        </label>
-    
-        <label class="formulario-label" for="farmaceutica">
-            <span>Farmacéutica</span>
-            <textarea id="farmaceutica" name="farmaceutica" placeholder="Laboratorio farmacéutico"></textarea>
-        </label>
-    
-        <label class="formulario-label" for="presentacion">
-            <span>Presentación</span>
-            <textarea id="presentacion" name="presentacion" placeholder="Presentación del medicamento"></textarea>
-        </label>
-    
-        <label class="formulario-label" for="dosis">
-            <span>Dosis</span>
-            <textarea id="dosis" name="dosis" placeholder="Dosis recomendada"></textarea>
-        </label>
-    
-        <label class="formulario-label" for="frecuencia">
-            <span>Frecuencia</span>
-            <textarea id="frecuencia" name="frecuencia" placeholder="Frecuencia del tratamiento"></textarea>
-        </label>
-    
-        <label class="formulario-label" for="duracion-tratamiento">
-            <span>Duración del tratamiento</span>
-            <textarea id="duracion-tratamiento" name="duracion-tratamiento" placeholder="Duración del tratamiento"></textarea>
-        </label>
-    
-        <label class="formulario-label" for="indicacion-uso">
-            <span>Indicación o uso</span>
-            <textarea id="indicacion-uso" name="indicacion-uso" placeholder="Indicación o uso del medicamento"></textarea>
-        </label>
-    
         <label class="formulario-label" for="fecha-emision">
             <span>Fecha de emisión</span>
-            <input type="date" id="fecha-emision" name="fecha-emision">
+            <input type="date" id="fecha-emision" name="fecha-emision" required>
         </label>
-        <a class="label-button" href="#test-form">Enviar</a>
-
+        <label class="formulario-label" for="institucion-educativa">
+            <span>Institución educativa</span>
+            <input type="text" id="institucion-educativa" name="institucion-educativa" required>
+        </label>
+        <label class="formulario-label" for="domicilio-consultorio">
+            <span>Domicilio del consultorio</span>
+            <input type="text" id="domicilio-consultorio" name="domicilio-consultorio" required>
+        </label>
+        <label class="formulario-label" for="telefono-medico">
+            <span>Teléfono del médico</span>
+            <input type="text" id="telefono-medico" name="telefono-medico" required>
+        </label>
+    
+        <!-- Contenedor para los medicamentos -->
+        <div id="medicamentos-container">
+            <h2 class="medicamentos-title">Medicamentos</h2>
+            <button class="formulario-agregar" type="button" onclick="agregarMedicamento()">Agregar medicamento</button>
+        </div>
+    
+        <button type="submit" class="label-button">Enviar</button>
     </form>
     
-    
-    
-<!-- footer start -->
+
+
+
+
+    <!-- footer start -->
     <footer class="footer">
-            <div class="footer_top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-4 col-md-6 col-lg-4">
-                            <div class="footer_widget">
-                                <div class="footer_logo">
-                                    <a href="#">
-                                        <img src="img/footer_logo.png" alt="">
-                                    </a>
-                                </div>
-                                <p>
-                                        Firmament morning sixth subdue darkness 
-                                        creeping gathered divide.
-                                </p>
-                                <div class="socail_links">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-twitter-alt"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-    
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img src="img/footer_logo.png" alt="">
+                                </a>
                             </div>
-                        </div>
-                        <div class="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                        Departments
-                                </h3>
+                            <p>
+                                Firmament morning sixth subdue darkness
+                                creeping gathered divide.
+                            </p>
+                            <div class="socail_links">
                                 <ul>
-                                    <li><a href="#">Eye Care</a></li>
-                                    <li><a href="#">Skin Care</a></li>
-                                    <li><a href="#">Pathology</a></li>
-                                    <li><a href="#">Medicine</a></li>
-                                    <li><a href="#">Dental</a></li>
-                                </ul>
-    
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-md-6 col-lg-2">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                        Useful Links
-                                </h3>
-                                <ul>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#"> Contact</a></li>
-                                    <li><a href="#"> Appointment</a></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 col-lg-3">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                        Address
-                                </h3>
-                                <p>
-                                    200, D-block, Green lane USA <br>
-                                    +10 367 467 8934 <br>
-                                    docmed@contact.com
-                                </p>
-                            </div>
+
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="copy-right_text">
-                <div class="container">
-                    <div class="footer_border"></div>
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <p class="copy_right text-center">
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <div class="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Departments
+                            </h3>
+                            <ul>
+                                <li><a href="#">Eye Care</a></li>
+                                <li><a href="#">Skin Care</a></li>
+                                <li><a href="#">Pathology</a></li>
+                                <li><a href="#">Medicine</a></li>
+                                <li><a href="#">Dental</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Useful Links
+                            </h3>
+                            <ul>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#"> Contact</a></li>
+                                <li><a href="#"> Appointment</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Address
+                            </h3>
+                            <p>
+                                200, D-block, Green lane USA <br>
+                                +10 367 467 8934 <br>
+                                docmed@contact.com
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
-<!-- footer end  -->
-    <!-- link that opens popup -->
-
-    <!-- form itself end-->
-    <form id="test-form" class="white-popup-block mfp-hide">
-        <div class="popup_box ">
-            <div class="popup_inner">
-                <h3>Make an Appointment</h3>
-                <form action="#">
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <input id="datepicker" placeholder="Pick date">
-                        </div>
-                        <div class="col-xl-6">
-                            <input id="datepicker2" placeholder="Suitable time">
-                        </div>
-                        <div class="col-xl-6">
-                            <select class="form-select wide" id="default-select" class="">
-                                <option data-display="Select Department">Department</option>
-                                <option value="1">2</option>
-                                <option value="2">3</option>
-                                <option value="3">4</option>
-                            </select>
-                        </div>
-                        <div class="col-xl-6">
-                            <select class="form-select wide" id="default-select" class="">
-                                <option data-display="Doctors">Doctors</option>
-                                <option value="1">2</option>
-                                <option value="2">3</option>
-                                <option value="3">4</option>
-                            </select>
-                        </div>
-                        <div class="col-xl-6">
-                            <input type="text"  placeholder="Name">
-                        </div>
-                        <div class="col-xl-6">
-                            <input type="text"  placeholder="Phone no.">
-                        </div>
-                        <div class="col-xl-12">
-                            <input type="email"  placeholder="Email">
-                        </div>
-                        <div class="col-xl-12">
-                            <button type="submit" class="boxed-btn3">Confirm</button>
-                        </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
+                            template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                                href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
-    </form>
+    </footer>
+    <!-- footer end  -->
+    <!-- link that opens popup -->
+
+
     <!-- form itself end -->
 
     <!-- JS here -->
@@ -432,6 +390,73 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/mail-script.js"></script>
 
     <script src="js/main.js"></script>
+
+    <!-- Scripts nuestros -->
+    <script src="./src/js/receta.js"></script>
+
+    <script>
+        let contadorMedicamentos = 0; // Inicializar el contador de medicamentos
+
+        // Función para agregar un nuevo conjunto de campos de medicamento
+        function agregarMedicamento() {
+            contadorMedicamentos++; // Incrementar el contador
+
+            const container = document.getElementById('medicamentos-container');
+
+            // Crear un nuevo div para el medicamento
+            const div = document.createElement('div');
+            div.classList.add('medicamento');
+
+            // Definir la estructura HTML para el nuevo medicamento
+            div.innerHTML = `
+                <h3>Medicamento ${contadorMedicamentos}</h3>
+                <label class="formulario-label">
+                    <span>Nombre genérico del medicamento</span>
+                    <input type="text" name="nombre-generico" placeholder="Nombre genérico del medicamento">
+                </label>
+                <label class="formulario-label">
+                    <span>Forma farmaceutica</span>
+                    <input type="text" name="forma-farmaceutica" placeholder="Nombre genérico del medicamento">
+                </label>                
+                <label class="formulario-label" for="telefono-medico">
+                    <span>Dosis</span>
+                    <input type="text" name="dosis" placeholder="Dosis recomendada">
+                </label>
+                <label class="formulario-label" for="telefono-medico">
+                    <span>Presentación</span>
+                    <input type="text" name="presentacion" placeholder="Presentación del medicamento">
+                </label>
+                <label class="formulario-label" for="telefono-medico">
+                    <span>Frecuencia</span>
+                    <input type="text" name="frecuencia" placeholder="Freciencia del medicamento">
+                </label>
+                <label class="formulario-label" for="telefono-medico">
+                    <span>Duracion</span>
+                    <input type="text" name="duracion" placeholder="Presentación del medicamento">
+                </label>
+                <label class="formulario-label" for="medicamento">
+                    <span>Indicaciones</span>
+                    <textarea id="medicamento" name="indicaciones" placeholder="Nombre del medicamento"></textarea>
+                </label>
+                <button class="formulario-eliminar" type="button" onclick="eliminarMedicamento(this)">Eliminar medicamento</button>
+                <hr>
+            `;
+
+            // Insertar el nuevo medicamento antes del botón "Agregar medicamento"
+            container.insertBefore(div, container.lastElementChild);
+        }
+
+        // Función para eliminar un medicamento
+        function eliminarMedicamento(button) {
+            button.parentElement.remove();
+            // Actualizar los números de medicamentos restantes
+            contadorMedicamentos--;
+            const medicamentos = document.querySelectorAll('.medicamento h3');
+            medicamentos.forEach((medicamento, index) => {
+                medicamento.textContent = `Medicamento ${index + 1}`;
+            });
+        }
+    </script>
     <script>
         $('#datepicker').datepicker({
             iconsLibrary: 'fontawesome',
@@ -446,9 +471,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             }
 
         });
-    $(document).ready(function() {
-    $('.js-example-basic-multiple').select2();
-});
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2();
+        });
     </script>
 </body>
 

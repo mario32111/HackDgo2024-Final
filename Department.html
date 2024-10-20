@@ -28,7 +28,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
 
-        
+        /*Titulo*/
+        #titDP{
+            color:black;
+            margin-left: 5%;
+        }
         /* Botones */
         button {
             padding: 10px 20px;
@@ -44,12 +48,13 @@
         /* Estilos de las tablas */
         table {
             border-collapse: collapse;
-            width: 100%;
-            margin: 25px 0;
+            width: 80%;
+            margin: 25px 5%;
             font-size: 18px;
             text-align: left;
+            border-radius: 15px;
+            
         }
-
         table th, table td {
             padding: 12px 15px;
             border: 1px solid #ddd;
@@ -67,6 +72,15 @@
 
         table tr:nth-child(even) {
             background-color: #f9f9f9;
+        }
+        #cabezath{
+            background-color: #333;
+            color: white;
+            font-style: italic;
+        }
+        .popup_inner{
+            margin-top: 20px;
+            background-color: white;
         }
     </style>
 
@@ -153,12 +167,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
-                    <div class="bradcam_text">
-                        <form action="" class="formBuscar" onsubmit="return handleSubmit(event)">
-                            <input type="text" class="formBuscar-text" placeholder="CURP" value="COGA031215" required>
-                            <input type="submit" value="Buscar" class="formBuscar-button">
-                        </form>
-                    </div>
+                    <form action class="formBuscar" onsubmit="return handleSubmit(event)">
+                        <div class="input__container input__container--variant">
+                            <div class="shadow__input shadow__input--variant"></div>
+                            <input type="text" name="text" class="input__search input__search--variant" formBuscar-text placeholder="CURP" value="COGA031215">
+                            <button class="input__button__shadow input__button__shadow--variant" class="formBuscar-button" value="buscar">
+                              <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="1.5em" width="13em">
+                                <path d="M4 9a5 5 0 1110 0A5 5 0 014 9zm5-7a7 7 0 104.2 12.6.999.999 0 00.093.107l3 3a1 1 0 001.414-1.414l-3-3a.999.999 0 00-.107-.093A7 7 0 009 2z" fill-rule="evenodd" fill="#FFF"></path>
+                              </svg>
+                            </button>
+                        </div> 
+                    </form>
                 </div>
             </div>
         </div>
@@ -171,7 +190,7 @@
                         <div class="icon">
                             <i class="fa-regular fa-user"></i>
                         </div>
-                        <h3>Datos personales</h3>
+                        <h3 >Datos personales</h3>
                         <p>Información básica del paciente para una atención personalizada.</p>
                         <button onclick="toggleElemenent(event, 'datos-personales')" class="boxed-btn3-white">Ver Info</button>
 
@@ -196,20 +215,73 @@
                         <h3>Antecedentes personales</h3>
                         <p>Historial médico del paciente relevante para el tratamiento.</p>
                         <button onclick="toggleElemenent(event, 'antecedentes-clinicos')" class="boxed-btn3-white">Ver Info</button>
+                </div>
+                    <!--Por ordenar-->    
+                </div>
+                <div class="row no-gutters dato-oscuro">
+                    <div class="col-xl-4 col-md-4 dato-oscuro">
+                        <div class="single_service">
+                            <div class="icon">
+                                <i class="fa-regular fa-file"></i>
+                            </div>
+                            <h3>Emergency Care</h3>
+                            <p>Protocolo para atender urgencias médicas.</p>
+                            <button onclick="toggleElemenent(event, 'protocolo-emergencias')" class="boxed-btn3-white">Ver</button>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4">
+                        <div class="single_service">
+                            <div class="icon">
+                                <i class="fa-solid fa-weight"></i>
+                            </div>
+                            <h3>Exploración física</h3>
+                            <p>Evaluación de datos físicos como peso e IMC.</p>
+                            <button onclick="toggleElemenent(event, 'exploracion-fisica')" class="boxed-btn3-white">Ver</button>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 dato-oscuro">
+                        <div class="single_service">
+                            <div class="icon">
+                                <i class="fa-solid fa-history"></i>
+                            </div>
+                            <h3>Evolución y seguimiento</h3>
+                            <p>Registro del progreso del paciente a lo largo del tiempo.</p>
+                            <button onclick="toggleElemenent(event, 'evo-seg')" class="boxed-btn3-white">Consultar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row no-gutters dato-oscuro">
+                    <div class="col-xl-4 col-md-4">
+                        <div class="single_service">
+                            <div class="icon">
+                                <i class="fa-regular fa-sticky-note"></i>
+                            </div>
+                            <h3>Notas adicionales del profesional de la salud</h3>
+                            <p>Comentarios y observaciones del médico.</p>
+                            <button onclick="toggleElemenent(event, 'notas')" class="boxed-btn3-white">Ver notas</button>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 dato-oscuro">
+                        <div class="single_service">
+                            <div class="icon">
+                                <i class="fa-solid fa-signature"></i>
+                            </div>
+                            <h3>Firma y datos del médico</h3>
+                            <p>Información del profesional que garantiza el tratamiento.</p>
+                            <button onclick="toggleElemenent(event, 'datos')" class="boxed-btn3-white">Ver datos</button>
+                        </div>
                     </div>
                 </div>
 
-                </div>
-            </div>
         </div>
     </div>
     <div id="datos-personales" class="ocultar">
         <div class="popup_inner">
-            <h3>Datos personales</h3>
+            <h3 id="titDP">Datos personales</h3>
             <table>
                 <tr>
-                    <th>Campos</th>
-                    <th>Datos</th>
+                    <th id="cabezath">Campos</th>
+                    <th id="cabezath">Datos</th>
                 </tr>
                 <tr>
                     <td>Curp</td>
@@ -266,11 +338,11 @@
     <!-- Ventana Antecedentes Clínicos -->
     <div id="antecedentes-clinicos" class="ocultar">
         <div class="popup_inner">
-            <h3>Antecedentes clínicos</h3>
+            <h3 id="titDP">Antecedentes clínicos</h3>
             <table>
                 <tr>
-                    <th>Fecha</th>
-                    <th>Diagnóstico</th>
+                    <th id="cabezath">Fecha</th>
+                    <th id="cabezath">Diagnóstico</th>
                 </tr>
                 <tr>
                     <td>20/09/2024</td>
@@ -287,6 +359,159 @@
                 <tr>
                     <td>27/09/2024</td>
                     <td>Insuficiencia renal</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--Ventana de protocolo de emergencias-->
+    <div id="protocolo-emergencias" class="ocultar">
+        <div class="popup_inner">
+            <h3 id="titDP">Protocolo de emergencias y urgencias medicas</h3>
+            <table>
+                <tr>
+                    <th id="cabezath">Paso</th>
+                    <th id="cabezath">Descripción</th>
+                </tr>
+                <tr>
+                    <td>Aplicacion del PAS</td>
+                    <td>Protegerse, avisar a los servicos de emergencias
+                        y socorrer, en ese orden.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Llamar a emergencias</td>
+                    <td>Informar el tipo de accidente, la localizacion exacta
+                        y las personas implicadas
+                    </td>
+                </tr>
+                <tr>
+                    <td>No mover a los heridos</td>
+                    <td>Espere a que las personas especializadas los mueva, 
+                        limitece a ofrecer primeros auxilios siempre y cuando 
+                        tenga los conocimientos
+                    </td>
+                </tr>
+                <tr>
+                    <td>Llegada de los servicios</td>
+                    <td>Una vez esten los servicios de emergencia en el lugar
+                        ellos haran lo que sea necesario con el paciente
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- Ventana de exploracion fisica -->
+    <div id="exploracion-fisica" class="ocultar">
+        <div class="popup_inner">
+            <h3 id="titDP">Exploracion fisica</h3>
+            <table>
+                <tr>
+                    <th id="cabezath">Medidas</th>
+                    <th id="cabezath">Datos</th>
+                </tr>
+                <tr>
+                    <td>Altura</td>
+                    <td>1.70m</td>
+                </tr>
+                <tr>
+                    <td>Peso</td>
+                    <td>90kg</td>
+                </tr>
+                <tr>
+                    <td>IMC</td>
+                    <td>31.1</td>
+                </tr>
+                <tr>
+                    <td>Situacion</td>
+                    <td>Obesidad</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- Ventana de evolucion y seguimiento -->
+    <div id="evo-seg" class="ocultar">
+        <div class="popup_inner">
+            <h3 id="titDP">Evolución y seguimiento.</h3>
+            <table>
+                <tr>
+                    <th id="cabezath">Fecha</th>
+                    <th id="cabezath">Estado</th>
+                </tr>
+                <tr>
+                    <td>10/10/2024</td>
+                    <td>Muy enfermo</td>
+                </tr>
+                <tr>
+                    <td>12/10/2024</td>
+                    <td>En recuperación</td>
+                </tr>
+                <tr>
+                    <td>14/10/2024</td>
+                    <td>Curado</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- Ventana de notas -->
+    <div id="notas" class="ocultar">
+        <div class="popup_inner">
+            <h3 id="titDP">Notas del medico.</h3>
+            <table>
+                <tr>
+                    <th id="cabezath">Fecha</th>
+                    <th id="cabezath">Nota</th>
+                </tr>
+                <tr>
+                    <td>10/10/2024</td>
+                    <td>Necesita tomar el medicamento que le recete y 5 dias de reposo</td>
+                </tr>
+                <tr>
+                    <td>12/10/2024</td>
+                    <td>Tome una dosis menor del medicamento y continue con el reposo</td>
+                </tr>
+                <tr>
+                    <td>14/10/2024</td>
+                    <td>Evite consumir alimentos hirritantes</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- Ventana de datos medicos -->
+    <div id="datos" class="ocultar">
+        <div class="popup_inner">
+            <h3 id="titDP">Datos del medico.</h3>
+            <table>
+                <tr>
+                    <th id="cabezath">Campo</th>
+                    <th id="cabezath">Descripcion</th>
+                </tr>
+                <tr>
+                    <td>Nombre</td>
+                    <td>Dr. Juan Hernandez Garcia</td>
+                </tr>
+                <tr>
+                    <td>Clinica / Hospital</td>
+                    <td>Clinica San Jorge</td>
+                </tr>
+                <tr>
+                    <td>Cedula</td>
+                    <td>1234567</td>
+                </tr>
+                <tr>
+                    <td>Titulo</td>
+                    <td>Medico cirujano</td>
+                </tr>
+                <tr>
+                    <td>Fecha de expedicion de la cedula</td>
+                    <td>15-06/2020</td>
+                </tr>
+                <tr>
+                    <td>Numero de registro</td>
+                    <td>987654321</td>
+                </tr>
+                <tr>
+                    <td>Firma</td>
+                    <td>"Firma del doctor"</td>
                 </tr>
             </table>
         </div>

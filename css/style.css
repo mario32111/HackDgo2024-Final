@@ -1252,6 +1252,8 @@ h3 {
 
 /* line 8, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_slider.scss */
 .slider_area .single_slider {
+  position:fixed;
+  z-index: 1;
   height: 700px;
   background-size: cover;
   background-repeat: no-repeat;
