@@ -50,7 +50,7 @@ function generatePrompt(medicamentos, alergias, peso, estatura, IMC, estiloDeVid
 
     return `El paciente debe tomar los siguientes medicamentos: ${medicamentosStr}. 
     El paciente tiene alergias a ${alergiasStr}, con un peso de ${peso}kg, una estatura de ${estatura}m, un IMC de ${IMC}, y un estilo de vida ${estiloDeVida}. 
-    Alguna de todas estas condiciones en la persona puede llegar a presentar contraindicaciones el consumo de sus medicamentos. Responde con sí o no.`;
+    Alguna de todas estas condiciones en la persona puede llegar a presentar contraindicaciones el consumo de sus medicamentos. Responde solamente con sí o no.`;
 }
 
 // Definir la función que procesará los datos del formulario
