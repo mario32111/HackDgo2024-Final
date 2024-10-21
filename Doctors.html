@@ -193,8 +193,8 @@
                                     <ul id="navigation">
                                         <li><a class="active" href="index.html">home</a></li>
                                         <li><a href="Department.html">Expedientes</a></li>
-                                        <li><a href="#">Chat AI <i class=""></i></a></li>
-                                        <li><a href="Doctors.html">Generar Receta</a></li>
+                                        <li><a href="chat.html">Chat AI <i class=""></i></a></li>
+                                        <li><a href="#">Generar Receta</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -202,7 +202,7 @@
                         <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                             <div class="Appointment">
                                 <div class="book_btn d-none d-lg-block">
-                                    <a class="popup-with-form" href="#test-form">Cerrar sesion</a>
+                                    <a class="popup-with-form" href="landing/index.html">Cerrar sesion</a>
                                 </div>
                             </div>
                         </div>
@@ -243,7 +243,16 @@
             <span>Teléfono del médico</span>
             <input type="text" id="telefono-medico" name="telefono-medico" required>
         </label>
-    
+        <label class="formulario-label" for="curp-paciente">
+            <span>CURP del paciente</span>
+            <input type="text" id="curp-paciente" name="curp-paciente" required>
+        </label>
+
+        <label class="formulario-label" for="diagnostico">
+            <span>Indicaciones</span>
+            <textarea id="diagnostico" name="diagnostico" placeholder="Ingresa el diagnostico de tu pacientes"></textarea>
+        </label>
+
         <!-- Contenedor para los medicamentos -->
         <div id="medicamentos-container">
             <h2 class="medicamentos-title">Medicamentos</h2>
@@ -266,7 +275,7 @@
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="#">
-                                    <img src="img/footer_logo.png" alt="">
+                                    <img class="img-logo" src="img/logo.jpg" alt="">
                                 </a>
                             </div>
                             <p>
