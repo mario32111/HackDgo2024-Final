@@ -69,6 +69,7 @@ function procesarFormulario(event) {
         telefonoMedico: formData.get('telefono-medico'),
         curpPaciente: formData.get('curp-paciente'),
 
+        
         medicamentos: []
     };
 
