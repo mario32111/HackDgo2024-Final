@@ -67,6 +67,8 @@ function procesarFormulario(event) {
         institucionEducativa: formData.get('institucion-educativa'),
         domicilioConsultorio: formData.get('domicilio-consultorio'),
         telefonoMedico: formData.get('telefono-medico'),
+        curpPaciente: formData.get('curp-paciente'),
+
         medicamentos: []
     };
 
