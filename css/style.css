@@ -261,7 +261,7 @@ h3 {
 .overlay_skyblue::before {
   position: absolute;
   content: "";
-  background-color: #5DB2FF;
+  background-color: #37cb4d;
   top: 0;
   left: 0;
   width: 100%;
@@ -363,7 +363,7 @@ h3 {
 /* line 274, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/theme-default.scss */
 .owl-carousel:hover .owl-nav div:hover {
   color: #fff;
-  background: #009DFF;
+  background: #84A64E;
   border: 1px solid transparent;
 }
 
@@ -392,19 +392,19 @@ h3 {
   font-size: 14px;
   font-weight: 400;
   border: 0;
-  border: 1px solid #009DFF;
+  border: 1px solid #83A64E;
   letter-spacing: 3px;
   text-align: center;
-  color: #009DFF !important;
+  color: #84A64E !important;
   text-transform: uppercase;
   cursor: pointer;
 }
 
 /* line 17, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
 .boxed-btn:hover {
-  background: #009DFF;
+  background: #83A64E;
   color: #fff !important;
-  border: 1px solid #009DFF;
+  border: 1px solid #83A64E;
 }
 
 /* line 22, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
@@ -420,7 +420,7 @@ h3 {
 /* line 29, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
 .boxed-btn3 {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0181f5+0,5db2ff+100 */
-  background: #0181f5;
+  background: #83A64E;
   /* Old browsers */
   background: -moz-linear-gradient(left, #0181f5 0%, #5db2ff 100%);
   /* FF3.6-15 */
@@ -511,14 +511,14 @@ h3 {
 
 /* line 93, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
 .boxed-btn3-white-2 {
-  color: #5DB2FF !important;
+  color: #83A64E !important;
   display: inline-block;
   padding: 9px 24px;
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: 400;
   border: 0;
-  border: 1px solid #5DB2FF;
+  border: 1px solid #83A64E;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -637,7 +637,7 @@ h3 {
 .section_title h3::before {
   position: absolute;
   left: 0;
-  background: #5DB2FF;
+  background: #37cb4d;
   height: 2px;
   width: 50px;
   content: '';
@@ -1459,7 +1459,7 @@ h3 {
   bottom: 0;
   height: 2px;
   width: 50px;
-  background: #5DB2FF;
+  background: #50732D;
 }
 
 /* line 76, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
@@ -1506,7 +1506,7 @@ h3 {
 /* line 101, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
 .welcome_docmed_area .welcome_docmed_info ul li i {
   margin-right: 10px;
-  color: #5DB2FF;
+  color: #37cb4d;
   font-weight: 16px;
 }
 
@@ -1524,7 +1524,7 @@ h3 {
 
 /* line 118, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
 .business_expert_area .business_info .icon i {
-  background: #5DB2FF;
+  background: #83A64E;
   width: 75px;
   height: 75px;
   display: inline-block;
@@ -2247,7 +2247,7 @@ h3 {
 .footer .footer_top {
   padding-top: 145px;
   padding-bottom: 129px;
-  background: #1F1F1F;
+  background: #808f92;
 }
 
 @media (max-width: 767px) {
@@ -2747,7 +2747,7 @@ h3 {
 
 /* line 28, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
 .our_department_area .single_department .department_content h3 a:hover {
-  color: #5DB2FF;
+  color: #50732D;
 }
 
 /* line 33, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
@@ -2761,7 +2761,7 @@ h3 {
 
 /* line 40, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
 .our_department_area .single_department .department_content a.learn_more {
-  color: #5DB2FF;
+  color: #50732D;
   font-size: 16px;
 }
 
@@ -3019,7 +3019,7 @@ h3 {
 
 /* line 55, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_experts.scss */
 .expert_doctors_area .single_expert:hover .experts_name {
-  background: #5DB2FF;
+  background: #50732D;
 }
 
 /* line 57, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_experts.scss */
@@ -6274,5 +6274,23 @@ h6 {
   margin-right: 10px;
   font-size: 12px;
 }
-
+.contSlogan{
+  width:100%;
+  height: 500px;
+  padding-left: 10%;
+  padding-right: 10%;
+  align-items: center;
+  background: rgb(43,64,22);
+  background: linear-gradient(90deg, rgba(43,64,22,1) 0%, rgba(131,166,78,1) 24%, rgba(240,242,242,1) 100%);
+}
+.Slogan{
+  padding-top: 10%;
+  color:#FFFFFF;
+  align-self:center;
+  font-size: 380%;
+  align-items: center;
+}
+.logo{
+  width:80%;
+}
 /*# sourceMappingURL=style.css.map */
