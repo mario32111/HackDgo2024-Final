@@ -1,8 +1,8 @@
-async function enviarMensaje(medicamentos) {
+async function enviarMensaje(medicamentos, diagnostico) {
     const alergias = ["Penicilina", "Polen", "Mariscos"];
-    const mensaje = generatePrompt(medicamentos, alergias, 70, 1.75, 22.9, "Sedentario");
+    const mensaje = generatePrompt(medicamentos, alergias, 70, 1.75, 22.9, "Sedentario", diagnostico);
 
-    const API_KEY = 'inserte api key '; // Cambia por tu API Key
+    const API_KEY = ''; // Cambia por tu API Key
     const API_URL = 'https://api.openai.com/v1/chat/completions';
 
     const dataToSend = {
@@ -41,7 +41,7 @@ async function enviarMensaje(medicamentos) {
     }
 }
 
-function generatePrompt(medicamentos, alergias, peso, estatura, IMC, estiloDeVida) {
+function generatePrompt(medicamentos, alergias, peso, estatura, IMC, estiloDeVida, diagnostico) {
     const medicamentosStr = medicamentos.map(m =>
         `Nombre Genérico: ${m.nombreGenerico}, Forma Farmacéutica: ${m.formaFarmaceutica}, Dosis: ${m.dosis}, Presentación: ${m.presentacion}, Frecuencia: ${m.frecuencia}, Duración: ${m.duracion}, Indicaciones: ${m.indicaciones}`
     ).join("; ");
@@ -50,7 +50,8 @@ function generatePrompt(medicamentos, alergias, peso, estatura, IMC, estiloDeVid
 
     return `El paciente debe tomar los siguientes medicamentos: ${medicamentosStr}. 
     El paciente tiene alergias a ${alergiasStr}, con un peso de ${peso}kg, una estatura de ${estatura}m, un IMC de ${IMC}, y un estilo de vida ${estiloDeVida}. 
-    Alguna de todas estas condiciones en la persona puede llegar a presentar contraindicaciones el consumo de sus medicamentos. Responde solamente con sí o no.`;
+    Además, el diagnóstico médico es: ${diagnostico}.
+    Alguna de estas condiciones puede presentar contraindicaciones con los medicamentos indicados. Responde solamente con sí o no y la razon.`;
 }
 
 // Definir la función que procesará los datos del formulario
@@ -68,8 +69,8 @@ function procesarFormulario(event) {
         domicilioConsultorio: formData.get('domicilio-consultorio'),
         telefonoMedico: formData.get('telefono-medico'),
         curpPaciente: formData.get('curp-paciente'),
+        diagnostico: formData.get('diagnostico'),  // Capturar diagnóstico
 
-        
         medicamentos: []
     };
 
@@ -95,7 +96,7 @@ function procesarFormulario(event) {
         });
     });
 
-    enviarMensaje(recetaData.medicamentos);
+    enviarMensaje(recetaData.medicamentos, recetaData.diagnostico); // Enviar diagnóstico a la API
 }
 
 // Esperar a que el DOM esté completamente cargado para asociar el evento
