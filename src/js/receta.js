@@ -22,23 +22,45 @@ async function enviarMensaje(medicamentos, diagnostico) {
 
         if (!response.ok) {
             console.error(`Error: ${response.status}`);
-            alert(`Error: ${response.status}`); // Muestra un alert si hay un error
+            showModal(`Error: ${response.status}`);
         } else {
             const responseData = await response.json();
             const message = responseData.choices?.[0]?.message?.content;
 
             if (message) {
                 console.log(message);
-                alert(`Respuesta de la API: ${message}`); // Muestra la respuesta en un alert
+                showModal(`Respuesta de la API: ${message}`);
             } else {
                 console.log("No se pudo obtener una respuesta de la API.");
-                alert("No se pudo obtener una respuesta de la API."); // Muestra un alert si no hay respuesta
+                showModal("No se pudo obtener una respuesta de la API.");
             }
         }
     } catch (error) {
         console.error('Error:', error);
-        alert('Error en la conexión a la API.'); // Muestra un alert si hay un error de conexión
+        showModal('Error en la conexión a la API.');
     }
+}
+
+// Función para mostrar el modal con la respuesta
+function showModal(message) {
+    const modal = document.getElementById('responseModal');
+    const modalMessage = document.getElementById('modal-message');
+    const closeButton = document.querySelector('.close-button');
+
+    modalMessage.textContent = message;
+    modal.style.display = "block";
+
+    // Cerrar el modal al hacer clic en el botón de cierre
+    closeButton.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // Cerrar el modal al hacer clic fuera de la ventana modal
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
 }
 
 function generatePrompt(medicamentos, alergias, peso, estatura, IMC, estiloDeVida, diagnostico) {
